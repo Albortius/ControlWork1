@@ -12,5 +12,18 @@ for(int i = 0; i < inputArrayCount; i++)
         lastArray[i]    = firstArray[i];
     }
 }
-// Блок логики
+// логический блок выявления элементамассива
+// с длиной строки меньше или равно 3 элемента
+int trueValuesCount = 0;
+for(int i = 0; i < inputArrayCount;i++)
+{
+    if(firstArray[i].Length <= 3)
+    {
+        lastArray[trueValuesCount] = firstArray[i];
+        trueValuesCount++;
+    }
+}
+Array.Resize(ref lastArray, trueValuesCount);
 // Вывод результата
+Console.Write(String.Join(", ",firstArray)+" => ");
+Console.Write(String.Join(", ", lastArray));
